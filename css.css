@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+#header{
+
+	top:10px;   
+
+	font-size:25px;
+	font-style:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+}

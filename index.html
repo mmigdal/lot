@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lottery Numeber Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link href="css.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+<body>
+<div id='header'>
+<br>
+
+<button type="button"  onclick="myFunction()" class="btn">הגרל</button>
+
+<br>
+
+
+<div id="results"></div>
+
+<br>
+
+
+<div id='nos'>:המספר הנוסף</div>
+
+<div id="results2"></div>
+
+
+
+
+</div>
+
+
+<script>
+
+var uniqueRandoms = [];
+var numRandoms = 37;
+function sortNumber(a, b) {
+  return a - b;
+}
+function makeUniqueRandom() {
+    // refill the array if needed
+    if (!uniqueRandoms.length) {
+        for (var i = 1; i < numRandoms; i++) {
+            uniqueRandoms.push(i);
+        }
+    }
+    var index = Math.floor(Math.random() * uniqueRandoms.length);
+    var val = uniqueRandoms[index];
+   
+    // now remove that value from the array
+    uniqueRandoms.splice(index, 1);
+
+    console.log(uniqueRandoms);
+    return val;
+
+}
+
+for (var i = 1; i < 7; i++) {
+    var rand = makeUniqueRandom();
+    if (i % numRandoms == 1) {
+        $("#results").append("<br>");
+    }
+    $("#results").append(rand + "<br>");
+}
+
+
+</script>
+
+
+<script>
+
+var uniqueRandoms = [];
+var numRandoms = 8;
+function makeUniqueRandom() {
+    // refill the array if needed
+    if (!uniqueRandoms.length) {
+        for (var i = 1; i < numRandoms; i++) {
+            uniqueRandoms.push(i);
+        }
+    }
+    var index = Math.floor(Math.random() * uniqueRandoms.length);
+    var val = uniqueRandoms[index];
+
+    // now remove that value from the array
+    uniqueRandoms.splice(index, 1);
+
+    return val;
+
+}
+
+for (var i = 1; i < 2; i++) {
+    var rand = makeUniqueRandom();
+    if (i % numRandoms == 1) {
+        $("#results2").append("<br>");
+    }
+    $("#results2").append(rand + "<br>");
+}
+
+
+</script>
+
+<script>
+function myFunction() {
+    location.reload();
+}
+</script>
+
+</body>
+</html>
